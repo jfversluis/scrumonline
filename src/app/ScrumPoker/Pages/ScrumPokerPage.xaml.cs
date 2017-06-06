@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace ScrumPoker
+namespace ScrumPoker.Pages
 {
     public partial class ScrumPokerPage : ContentPage
     {

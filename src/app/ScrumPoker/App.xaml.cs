@@ -1,5 +1,9 @@
-﻿using Xamarin.Forms;
+﻿using FreshMvvm;
+using ScrumPoker.PageModels;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ScrumPoker
 {
     public partial class App : Application
@@ -8,7 +12,7 @@ namespace ScrumPoker
         {
             InitializeComponent();
 
-            MainPage = new ScrumPokerPage();
+            MainPage = new FreshNavigationContainer(FreshPageModelResolver.ResolvePageModel<ScrumPokerPageModel>());
         }
 
         protected override void OnStart()

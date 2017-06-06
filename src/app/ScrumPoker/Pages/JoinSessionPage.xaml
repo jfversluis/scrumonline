@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Join" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ScrumPoker.Pages.JoinSessionPage">
+    <TableView Intent="Form">
+        <TableView.Root>
+            <TableSection>
+                <EntryCell Label="Session" Text="{Binding CurrentSession.Name}" IsEnabled="false" />
+                <EntryCell Label="Name" Text="{Binding MyName, Mode=TwoWay}" />
+            </TableSection>
+            <TableSection>
+                <ViewCell>
+                    <Button Text="Join" Command="{Binding JoinSessionCommand}" />
+                </ViewCell>
+            </TableSection>
+        </TableView.Root>
+    </TableView>
+</ContentPage>
