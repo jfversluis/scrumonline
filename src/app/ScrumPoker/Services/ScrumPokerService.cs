@@ -51,5 +51,15 @@ namespace ScrumPoker.Services
                 // TODO implement further
             }
 		}
+
+        public async Task CreateSession(Session session)
+        {
+            var result = await _scrumPokerService.CreateSession(session);
+
+            if (result.Success)
+            {
+                // TODO implement further
+            }
+        }
     }
 }

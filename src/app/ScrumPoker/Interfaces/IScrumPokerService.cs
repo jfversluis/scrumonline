@@ -12,5 +12,8 @@ namespace ScrumPoker.Interfaces
 
         [Post("/session/join")]
         Task<ScrumPokerResult<object>> JoinSession(JoinSessionMessage message);
+
+        [Post("/session/create")]
+        Task<ScrumPokerResult<object>> CreateSession(Session session);
     }
 }
