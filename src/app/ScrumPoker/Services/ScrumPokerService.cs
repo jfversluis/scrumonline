@@ -27,39 +27,22 @@ namespace ScrumPoker.Services
         public async Task<List<Session>> GetSessions()
         {
             // TODO implement error handling
-            var result = await _scrumPokerService.GetSessions();
-
-            if (result.Success)
-                return result.Result;
-
-            return null;
+            return await _scrumPokerService.GetSessions();
         }
 
 		public async Task JoinSession(Session session, string name)
-		{
-            var joinMessage = new JoinSessionMessage
-            {
-                Id = session.Id,
-                Name = name
-            };
-
+        {
             // TODO implement error handling
-            var result = await _scrumPokerService.JoinSession(joinMessage);
-
-			if (result.Success)
+            await _scrumPokerService.JoinSession(session.Id, new Member()
             {
-                // TODO implement further
-            }
+                Name = name
+            });
 		}
 
         public async Task CreateSession(Session session)
         {
-            var result = await _scrumPokerService.CreateSession(session);
-
-            if (result.Success)
-            {
-                // TODO implement further
-            }
+			// TODO implement error handling
+			await _scrumPokerService.CreateSession(session);
         }
     }
 }

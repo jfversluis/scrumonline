@@ -8,10 +8,10 @@ namespace ScrumPoker.Interfaces
     public interface IScrumPokerService
     {
         [Get("/session/list")]
-        Task<ScrumPokerResult<List<Session>>> GetSessions();
+        Task<List<Session>> GetSessions();
 
-        [Post("/session/join")]
-        Task<ScrumPokerResult<object>> JoinSession(JoinSessionMessage message);
+        [Put("/session/member/{sessionId}")]
+        Task JoinSession(int sessionId, [Body]Member member);
 
         [Post("/session/create")]
         Task<ScrumPokerResult<object>> CreateSession(Session session);

@@ -50,16 +50,15 @@
     <Compile Include="Interfaces\IScrumPokerService.cs" />
     <Compile Include="Models\Session.cs" />
     <Compile Include="Services\ScrumPokerService.cs" />
-    <Compile Include="Models\ScrumPokerResult.cs" />
     <Compile Include="PageModels\JoinSessionPageModel.cs" />
     <Compile Include="Pages\JoinSessionPage.xaml.cs">
       <DependentUpon>JoinSessionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\JoinSessionMessage.cs" />
     <Compile Include="Pages\NewSessionPage.xaml.cs">
       <DependentUpon>NewSessionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageModels\NewSessionPageModel.cs" />
+    <Compile Include="Models\Member.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
