@@ -14,6 +14,9 @@ namespace ScrumPoker.Interfaces
         Task JoinSession(int sessionId, [Body]Member member);
 
         [Post("/session/create")]
-        Task<ScrumPokerResult<object>> CreateSession(Session session);
+        Task<Session> CreateSession(Session session);
+
+        [Get("/session/cardsets")]
+        Task<string[][]> GetAvailableCardSets();
     }
 }

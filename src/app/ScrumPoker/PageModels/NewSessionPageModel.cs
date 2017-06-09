@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Input;
 using FreshMvvm;
 using ScrumPoker.Models;
@@ -9,6 +10,8 @@ namespace ScrumPoker.PageModels
 {
     public class NewSessionPageModel : FreshBasePageModel
     {
+        private string[][] _availableCardSets;
+
         public Session NewSession { get; } = new Session();
 
         private ICommand _createSessionsCommand;
@@ -21,10 +24,17 @@ namespace ScrumPoker.PageModels
 			}
 		}
 
-        private void ExecuteCreateSessionCommand()
+        public async override void Init(object initData)
+        {
+            base.Init(initData);
+
+            _availableCardSets = await ScrumPokerService.Instance.GetAvailableCardSets();
+        }
+
+        private async void ExecuteCreateSessionCommand()
         {
             // TODO validate
-            ScrumPokerService.Instance.CreateSession(NewSession);
+            var createdSession = await ScrumPokerService.Instance.CreateSession(NewSession);
 
             // TODO enter session
         }

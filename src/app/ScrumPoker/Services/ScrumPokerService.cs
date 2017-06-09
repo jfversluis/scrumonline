@@ -39,10 +39,15 @@ namespace ScrumPoker.Services
             });
 		}
 
-        public async Task CreateSession(Session session)
+        public async Task<Session> CreateSession(Session session)
         {
 			// TODO implement error handling
-			await _scrumPokerService.CreateSession(session);
+			return await _scrumPokerService.CreateSession(session);
+        }
+
+        public async Task<string[][]> GetAvailableCardSets()
+        {
+            return await _scrumPokerService.GetAvailableCardSets();
         }
     }
 }
